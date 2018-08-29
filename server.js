@@ -7,6 +7,7 @@ wss.on('connection', function connection(ws) {
     
     // when the server receives a connection
     ws.on('message', function incoming(data) {
+        console.log(data);
         // broadcast the message data
         wss.clients.forEach(function each (client) {
             if (client !== ws && client.readyState === WebSocket.OPEN) {
